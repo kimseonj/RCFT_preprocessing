@@ -1,0 +1,26 @@
+img_path: /storage/kimsj/SNSB/wku_project/snsb_rcft/divided_OID_Unum/
+out_path: /storage/kimsj/SNSB/wku_project/snsb_rcft/result_3
+black_preprocessing: False
+rcft:
+    - copy
+    - immediate
+    - delay
+adaptive_threshold:
+    block_size: 17
+    c: 5
+remove_background:
+    copy:
+        left: 80
+        right: -80
+        up: 480
+        down: -208
+    immediate:
+        left: 80
+        right: -80
+        up: 480
+        down: -508
+    delay:
+        left: 80
+        right: -80
+        up: 480
+        down: -508

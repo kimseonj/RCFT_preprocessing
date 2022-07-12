@@ -1,0 +1,25 @@
+img_path: /storage/kimsj/SNSB/wku_RCFT/img/tiff_img/modify_img/
+out_path: /storage/kimsj/SNSB/wku_RCFT/png_result/
+rcft:
+    - copy
+    - immediate
+    - delay
+adaptive_threshold:
+    block_size: 17
+    c: 5
+remove_background:
+    copy:
+        left: 55
+        right: -25
+        up: 310
+        down: -145
+    immediate:
+        left: 55
+        right: -45
+        up: 310
+        down: -260
+    delay:
+        left: 50
+        right: -50
+        up: 300
+        down: -170

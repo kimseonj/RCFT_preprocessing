@@ -22,7 +22,7 @@ def remove_background(img, order, name, config):
     #행, 열
     num = 255
     if order == 'copy':
-        if name in ['wknz-025_1.tiff','wknz-146_1.tiff','wknz-038_1.tiff','wknz-063_1.tiff']:
+        if name in ['wknz-025.jpg','wknz-146.jpg','wknz-038.jpg','wknz-063.jpg']:
             return img
 
         # 상하단 제거(snsb, 반응시간)

@@ -37,14 +37,14 @@ def square(img, black):
     if black == True:    
         new_img = cv2.copyMakeBorder(img, top+100, bottom+100, left+100, right+100, cv2.BORDER_CONSTANT, value=[0, 0, 0])
     else:
-        new_img = cv2.copyMakeBorder(img, top+100, bottom+100, left+100, right+100, cv2.BORDER_CONSTANT, value=[255, 255, 255])
+        new_img = cv2.copyMakeBorder(img, top+200, bottom+200, left+200, right+200, cv2.BORDER_CONSTANT, value=[255, 255, 255])
 
     return new_img
 
 def set_copysize(img):
     h,w = img.shape[0:2]
     top,bottom,left,right = 0,0,0,0
-    size_h = 1500
+    size_h = 800
 
     # 가로, 세로 중 가장 긴 변을 찾는다.
     if h<size_h:
@@ -88,3 +88,15 @@ def pre(path, save_path):
 # path = '/storage/kimsj/SNSB/pentagon/score_20220511/preprocessing/img01/score_0'
 # save_path = '/storage/kimsj/SNSB/pentagon/score_20220511/preprocessing/resize_img01/score_0'
 # pre(path,save_path)
+
+if __name__ == '__main__':
+    images = sorted(glob('/data/kimsj/project/wku_rcft/image/wknz_copy_cropresult/*.jpg'))
+    print(len(images))
+    
+    for img in tqdm(images):
+        name = img.split('/')[-1]
+
+        img = cv2.imread(img)
+        img = square(img, False)
+
+        cv2.imwrite('/data/kimsj/project/wku_rcft/image/padding_copy/{}'.format(name), img)
